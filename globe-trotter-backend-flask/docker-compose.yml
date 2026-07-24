@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    container_name: globe-trotter-api
+    ports:
+      - "4000:4000"
+    volumes:
+      # IMPORTANT : sans ce volume, data/db.json est perdu à chaque rebuild
+      - ./data:/app/data
+    env_file:
+      - .env
+    restart: unless-stopped
