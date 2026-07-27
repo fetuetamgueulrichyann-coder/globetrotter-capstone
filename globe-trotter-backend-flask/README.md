@@ -3,9 +3,9 @@
 API REST monolithique en **Python/Flask**. Stockage : fichier JSON (`data/db.json`). Auth : JWT.
 Conteneurisée avec **Docker**.
 
----
 
-## 🚀 Démarrage — sans Docker
+
+## Démarrage — sans Docker
 
 ```powershell
 python -m venv venv
