@@ -3,11 +3,11 @@
 GlobeTrotter is a **monolithic Flask application** that serves as the starting point for a semester-long capstone project.  
 Students build the monolith first, then refactor it into microservices, and finally deploy it to the cloud with resilience patterns using Docker, Kubernetes, and cloud-native tooling.
 
----
+
 
 ## Project Structure
 
-```
+
 .
 ├── app/
 │   ├── __init__.py         # Flask app factory
