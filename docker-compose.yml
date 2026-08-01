@@ -6,7 +6,7 @@ services:
     container_name: globetrotter_app
     ports:
       - "5000:5000"
-    # Mount local code so changes are reflected without rebuilding the image
+    # Mounts local code so changes are reflected without rebuilding the image
     volumes:
       - .:/globetrotter
     environment:
