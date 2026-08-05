@@ -6,7 +6,7 @@ ENV PORT=4000
 
 WORKDIR /app
 
-# Installer les dépendances d'abord (profite du cache Docker si seul le code change)
+# Installer les dépendances d'abord (profite du caches Docker si seul le code change)
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
