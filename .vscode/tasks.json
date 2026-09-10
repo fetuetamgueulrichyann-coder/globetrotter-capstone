@@ -1,0 +1,156 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    // ============ ÉTAPE 1 : préparer les .env (généré automatiquement) ============
+    {
+      "label": "1️⃣ Générer les fichiers .env",
+      "type": "shell",
+      "command": "powershell",
+      "args": ["-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/setup-env.ps1"],
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": []
+    },
+
+    // ============ ÉTAPE 2 : installer les dépendances (chaque service) ============
+    {
+      "label": "install:user-service",
+      "type": "shell",
+      "command": "python -m venv venv; .\\venv\\Scripts\\pip.exe install -r requirements.txt",
+      "options": { "cwd": "${workspaceFolder}/backend/user-service" },
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "problemMatcher": []
+    },
+    {
+      "label": "install:itinerary-service",
+      "type": "shell",
+      "command": "python -m venv venv; .\\venv\\Scripts\\pip.exe install -r requirements.txt",
+      "options": { "cwd": "${workspaceFolder}/backend/itinerary-service" },
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "problemMatcher": []
+    },
+    {
+      "label": "install:recommendation-service",
+      "type": "shell",
+      "command": "python -m venv venv; .\\venv\\Scripts\\pip.exe install -r requirements.txt",
+      "options": { "cwd": "${workspaceFolder}/backend/recommendation-service" },
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "problemMatcher": []
+    },
+    {
+      "label": "install:gateway",
+      "type": "shell",
+      "command": "python -m venv venv; .\\venv\\Scripts\\pip.exe install -r requirements.txt",
+      "options": { "cwd": "${workspaceFolder}/backend/gateway" },
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "problemMatcher": []
+    },
+    {
+      "label": "install:frontend",
+      "type": "shell",
+      "command": "npm install",
+      "options": { "cwd": "${workspaceFolder}/frontend" },
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "problemMatcher": []
+    },
+    {
+      "label": "2️⃣ Installer toutes les dépendances (peut prendre 2-3 minutes)",
+      "dependsOn": [
+        "install:user-service",
+        "install:itinerary-service",
+        "install:recommendation-service",
+        "install:gateway",
+        "install:frontend"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+
+    // ============ ÉTAPE 0 (bis) : installation complète en un seul clic ============
+    {
+      "label": "⚙️ Installation complète (à faire UNE SEULE FOIS)",
+      "dependsOn": [
+        "1️⃣ Générer les fichiers .env",
+        "2️⃣ Installer toutes les dépendances (peut prendre 2-3 minutes)"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+
+    // ============ LANCEMENT : chaque service dans son propre panneau ============
+    {
+      "label": "run:user-service",
+      "type": "shell",
+      "command": ".\\venv\\Scripts\\python.exe run.py",
+      "options": { "cwd": "${workspaceFolder}/backend/user-service" },
+      "isBackground": true,
+      "presentation": { "reveal": "always", "panel": "dedicated", "group": "servers" },
+      "problemMatcher": {
+        "pattern": { "regexp": "." , "file": 1, "location": 2, "message": 3 },
+        "background": { "activeOnStart": true, "beginsPattern": ".", "endsPattern": "initialisé" }
+      }
+    },
+    {
+      "label": "run:itinerary-service",
+      "type": "shell",
+      "command": ".\\venv\\Scripts\\python.exe run.py",
+      "options": { "cwd": "${workspaceFolder}/backend/itinerary-service" },
+      "isBackground": true,
+      "presentation": { "reveal": "always", "panel": "dedicated", "group": "servers" },
+      "problemMatcher": {
+        "pattern": { "regexp": "." , "file": 1, "location": 2, "message": 3 },
+        "background": { "activeOnStart": true, "beginsPattern": ".", "endsPattern": "initialisé" }
+      }
+    },
+    {
+      "label": "run:recommendation-service",
+      "type": "shell",
+      "command": ".\\venv\\Scripts\\python.exe run.py",
+      "options": { "cwd": "${workspaceFolder}/backend/recommendation-service" },
+      "isBackground": true,
+      "presentation": { "reveal": "always", "panel": "dedicated", "group": "servers" },
+      "problemMatcher": {
+        "pattern": { "regexp": "." , "file": 1, "location": 2, "message": 3 },
+        "background": { "activeOnStart": true, "beginsPattern": ".", "endsPattern": "initialisé" }
+      }
+    },
+    {
+      "label": "run:gateway",
+      "type": "shell",
+      "command": ".\\venv\\Scripts\\python.exe app.py",
+      "options": { "cwd": "${workspaceFolder}/backend/gateway" },
+      "isBackground": true,
+      "presentation": { "reveal": "always", "panel": "dedicated", "group": "servers" },
+      "problemMatcher": {
+        "pattern": { "regexp": "." , "file": 1, "location": 2, "message": 3 },
+        "background": { "activeOnStart": true, "beginsPattern": ".", "endsPattern": "Running on" }
+      }
+    },
+    {
+      "label": "run:frontend",
+      "type": "shell",
+      "command": "npm run dev",
+      "options": { "cwd": "${workspaceFolder}/frontend" },
+      "isBackground": true,
+      "presentation": { "reveal": "always", "panel": "dedicated", "group": "servers" },
+      "problemMatcher": {
+        "pattern": { "regexp": "." , "file": 1, "location": 2, "message": 3 },
+        "background": { "activeOnStart": true, "beginsPattern": ".", "endsPattern": "ready in" }
+      }
+    },
+
+    // ============ LE BOUTON QUE TU UTILISERAS TOUS LES JOURS ============
+    {
+      "label": "🚀 Lancer MboaTrip",
+      "dependsOn": [
+        "run:user-service",
+        "run:itinerary-service",
+        "run:recommendation-service",
+        "run:gateway",
+        "run:frontend"
+      ],
+      "dependsOrder": "parallel",
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    }
+  ]
+}

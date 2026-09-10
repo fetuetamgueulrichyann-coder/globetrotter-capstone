@@ -1,0 +1,449 @@
+{
+  "destinations": [
+    {
+      "id": "d12",
+      "name": "Bafoussam",
+      "country": "Cameroun",
+      "region": "Ouest",
+      "tags": [
+        "culture",
+        "artisanat",
+        "gastronomie",
+        "urbain"
+      ],
+      "popularity": 90,
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bafoussam%20chefferie.JPG",
+      "description": "Capitale régionale de l'Ouest et cœur du Royaume Bafoussam. Palais royal fondé au XIIIe siècle, marché vibrant et porte d'entrée du pays Bamiléké.",
+      "pricePerDay": 35,
+      "lat": 5.4778,
+      "lng": 10.4176,
+      "pointsOfInterest": [
+        {
+          "name": "Chefferie de Bafoussam (Palais royal)",
+          "type": "tourist_attraction",
+          "description": "Résidence du chef supérieur des Bafoussam, fondée au XIIIe siècle. Combine architecture bamiléké traditionnelle, forêt sacrée et cour cérémonielle centrale, avec un arbre ancien en son cœur. Situé en face de la gare routière principale.",
+          "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bafoussam%20chefferie.JPG",
+          "images": [
+            "https://commons.wikimedia.org/wiki/Special:FilePath/Bafoussam%20chefferie.JPG",
+            "https://commons.wikimedia.org/wiki/Special:FilePath/Case%20%C3%A0%20palabres%20-%20Chefferie%20Bafoussam.jpg",
+            "https://commons.wikimedia.org/wiki/Special:FilePath/Chefferie%20Bafoussam%20-%20Architecture%20portes.jpg",
+            "https://commons.wikimedia.org/wiki/Special:FilePath/Chefferie%20Bafoussam%20-%20Architecture.jpg",
+            "https://commons.wikimedia.org/wiki/Special:FilePath/Chefferie%20Bafoussam%20-%20Case%20%C3%A0%20palabres%2001.jpg",
+            "https://commons.wikimedia.org/wiki/Special:FilePath/Chefferie%20Bafoussam%20-%20Case%20%C3%A0%20palabres%2002.jpg",
+            "https://commons.wikimedia.org/wiki/Special:FilePath/Chefferie%20Bafoussam%20-%20Case%20%C3%A0%20palabres%2003.jpg",
+            "https://commons.wikimedia.org/wiki/Special:FilePath/Chefferie%20Bafoussam%20-%20Chronologie%20des%20chefs.jpg"
+          ],
+          "lat": 5.4678,
+          "lng": 10.425,
+          "sourceUrl": "https://fr.wikipedia.org/wiki/Bafoussam"
+        },
+        {
+          "name": "Marché A (Marché Casablanca)",
+          "type": "tourist_attraction",
+          "description": "Le cœur battant de Bafoussam : fruits, légumes, artisanat, tissus. Ouvert du matin jusque tard le soir, ambiance colorée et vivante caractéristique de l'Ouest camerounais.",
+          "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Entr%C3%A9e%20principale%20march%C3%A9%20-%20Bafoussam.jpg",
+          "images": [
+            "https://commons.wikimedia.org/wiki/Special:FilePath/Entr%C3%A9e%20principale%20march%C3%A9%20-%20Bafoussam.jpg",
+            "https://images.unsplash.com/photo-1555529771-122e5d9f2341"
+          ],
+          "lat": 5.4745,
+          "lng": 10.4198,
+          "sourceUrl": "https://fr.wikivoyage.org/wiki/Bafoussam"
+        },
+        {
+          "name": "Forêt sacrée de la Chefferie",
+          "type": "tourist_attraction",
+          "description": "Espace boisé protégé au sein même du domaine royal, lieu de rituels et de cérémonies traditionnelles, interdit d'accès sans autorisation du palais.",
+          "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Foret%20sacr%C3%A9e%20chefferie%20Bafoussam.jpg",
+          "images": [
+            "https://commons.wikimedia.org/wiki/Special:FilePath/Foret%20sacr%C3%A9e%20chefferie%20Bafoussam.jpg",
+            "https://commons.wikimedia.org/wiki/Special:FilePath/For%C3%AAt%20sacr%C3%A9%20chefferie%20Bafoussam.jpg",
+            "https://commons.wikimedia.org/wiki/Special:FilePath/For%C3%AAt%20sacr%C3%A9%20chefferie%20Bafoussam1.jpg"
+          ],
+          "lat": 5.469,
+          "lng": 10.426,
+          "sourceUrl": "https://fr.wikipedia.org/wiki/Bafoussam"
+        },
+        {
+          "name": "Chutes de la Métché",
+          "type": "tourist_attraction",
+          "description": "Cascade d'environ 40 mètres de hauteur entourée d'une végétation sauvage. Haut lieu de mémoire et de purification traditionnelle pour le peuple Bamiléké, où offrandes de sel, pièces et huile de palme sont encore déposées aujourd'hui.",
+          "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chutes%20de%20la%20M%C3%A9tchi%C3%A9-2.jpg",
+          "images": [
+            "https://commons.wikimedia.org/wiki/Special:FilePath/Chutes%20de%20la%20M%C3%A9tchi%C3%A9-2.jpg",
+            "https://commons.wikimedia.org/wiki/Special:FilePath/Les%20chutes%20de%20la%20metch%C3%A9.jpg"
+          ],
+          "lat": 5.5186,
+          "lng": 10.3732,
+          "sourceUrl": "https://fr.wikipedia.org/wiki/Chutes_de_la_M%C3%A9tch%C3%A9",
+          "priceInfo": "Entrée : généralement gratuite ou petite contribution de 500 à 1 000 FCFA pour les guides/gardiens locaux."
+        },
+        {
+          "name": "Lac Baleng",
+          "type": "tourist_attraction",
+          "description": "Lac de cratère volcanique (aussi appelé Neheu Long) niché dans la chefferie Baleng, sanctuaire traditionnel inscrit depuis 2020 au patrimoine culturel immatériel du Cameroun. Eaux calmes entourées d'une forêt de pins, idéal pour la randonnée.",
+          "imageUrl": "https://images.unsplash.com/photo-1439066615861-d1af74d74000",
+          "images": [
+            "https://images.unsplash.com/photo-1439066615861-d1af74d74000"
+          ],
+          "lat": 5.5312,
+          "lng": 10.4431,
+          "sourceUrl": "https://fr.wikipedia.org/wiki/Lac_Baleng",
+          "priceInfo": "Entrée : gratuite (site naturel ouvert). Un guide local autour du cratère est apprécié avec un pourboire de 1 000 à 2 000 FCFA."
+        },
+        {
+          "name": "Chefferie Supérieure de Bafoussam (Fussep)",
+          "type": "tourist_attraction",
+          "description": "Berceau de la communauté Fussep à Bafoussam : palais du chef, musée communautaire et forêt sacrée préservée, témoins vivants de l'organisation traditionnelle bamiléké.",
+          "imageUrl": "https://images.unsplash.com/photo-1523805009345-7448845a9e53",
+          "images": [
+            "https://images.unsplash.com/photo-1523805009345-7448845a9e53"
+          ],
+          "lat": 5.4744,
+          "lng": 10.4152,
+          "sourceUrl": "https://fr.wikipedia.org/wiki/Bafoussam"
+        }
+      ]
+    },
+    {
+      "id": "d13",
+      "name": "Bandjoun",
+      "country": "Cameroun",
+      "region": "Ouest",
+      "tags": [
+        "culture",
+        "artisanat",
+        "patrimoine",
+        "art"
+      ],
+      "popularity": 82,
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cour%20du%20Palais%20de%20Bandjoun.jpg",
+      "description": "L'une des chefferies les plus grandes et influentes du pays Bamiléké, à 17km au sud de Bafoussam. Palais royal historique, musée communautaire et centre d'art contemporain Bandjoun Station.",
+      "pricePerDay": 30,
+      "lat": 5.3667,
+      "lng": 10.4167,
+      "pointsOfInterest": [
+        {
+          "name": "Chefferie de Bandjoun (Palais royal)",
+          "type": "tourist_attraction",
+          "description": "Fondée par le prince Notchwegom, l'une des plus grandes chefferies du Cameroun sur le thème \"Forge, Arts et Pouvoir\". La Grande Case, structure en bambou de 17 mètres de haut ornée de sculptures ancestrales, est le cœur du palais.",
+          "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cour%20du%20Palais%20de%20Bandjoun.jpg",
+          "images": [
+            "https://commons.wikimedia.org/wiki/Special:FilePath/Cour%20du%20Palais%20de%20Bandjoun.jpg",
+            "https://commons.wikimedia.org/wiki/Special:FilePath/A%20hut%20at%20Bandjoun%20palace.jpg",
+            "https://commons.wikimedia.org/wiki/Special:FilePath/Paysage%20Bandjoun.jpg"
+          ],
+          "lat": 5.3813,
+          "lng": 10.4124,
+          "sourceUrl": "https://fr.wikipedia.org/wiki/Bandjoun",
+          "priceInfo": "Adulte : 2 000 FCFA · Enfant/étudiant : 500 FCFA · Droit de photo : 1 000 FCFA · Droit de vidéo : 3 000 FCFA."
+        },
+        {
+          "name": "Musée Communautaire de Bandjoun",
+          "type": "tourist_attraction",
+          "description": "Situé dans l'enceinte de la chefferie, ce musée sur le thème \"Forges, Arts et Pouvoirs\" conserve près de 400 objets et 25 panneaux d'exposition retraçant l'histoire du royaume Bandjoun, dont la statue du roi Kamga Joseph II (Fo Mbassa).",
+          "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Esplanade%20de%20la%20chefferie%20bandjoun.jpg",
+          "images": [
+            "https://commons.wikimedia.org/wiki/Special:FilePath/03%20-%20Statue%20de%20celui%20qui%20a%20%C3%A9t%C3%A9%20consid%C3%A9r%C3%A9%20comme%20le%20plus%20grand%20ou%20embl%C3%A9matique%20roi%20des%20Bandjoun%20KAMGA%20Joseph%20II%20%28Fo%20MBASSA%29%20de%201900-1975.JPG",
+            "https://commons.wikimedia.org/wiki/Special:FilePath/Fo%20Djomo%20Kamga%20de%20Bandjoun%2C%20West%20Province%2C%20Cameroon.jpg"
+          ],
+          "lat": 5.367,
+          "lng": 10.417,
+          "sourceUrl": "https://fr.wikipedia.org/wiki/Bandjoun"
+        },
+        {
+          "name": "Bandjoun Station",
+          "type": "tourist_attraction",
+          "description": "Centre d'art contemporain fondé par l'artiste camerounais Barthélemy Toguo, mêlant création artistique, agriculture et résidences d'artistes — un pont unique entre tradition et modernité.",
+          "imageUrl": "https://images.unsplash.com/photo-1541961017774-22349e4a1262",
+          "images": [
+            "https://images.unsplash.com/photo-1541961017774-22349e4a1262",
+            "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b"
+          ],
+          "lat": 5.367,
+          "lng": 10.4201,
+          "sourceUrl": "https://fr.wikipedia.org/wiki/Barth%C3%A9lemy_Toguo"
+        },
+        {
+          "name": "Grotte Fovu (Baham)",
+          "type": "tourist_attraction",
+          "description": "Site géologique et sanctuaire mystique majeur à quelques kilomètres du palais royal de Baham : un champ de 15 hectares de rochers granitiques atteignant 15 mètres de haut, lieu de rituels et de purification où la lignée royale communique avec les esprits.",
+          "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cave%20Fovu%2C%20Baham%2C%20Cameroon.jpg",
+          "images": [
+            "https://commons.wikimedia.org/wiki/Special:FilePath/Cave%20Fovu%2C%20Baham%2C%20Cameroon.jpg"
+          ],
+          "lat": 5.3341,
+          "lng": 10.3789,
+          "sourceUrl": "https://fr.wikipedia.org/wiki/Grotte_Fovu"
+        }
+      ]
+    },
+    {
+      "id": "d20",
+      "name": "Douala",
+      "country": "Cameroun",
+      "region": "Littoral",
+      "tags": [
+        "culture",
+        "histoire",
+        "art",
+        "urbain",
+        "gastronomie"
+      ],
+      "popularity": 92,
+      "imageUrl": "/images/douala-nouvelle-liberte-1.jpg",
+      "description": "Capitale économique du Cameroun et cœur du peuple Sawa. Ville portuaire cosmopolite mêlant patrimoine colonial, art contemporain, gastronomie du littoral et effervescence urbaine, entre le fleuve Wouri et l'océan Atlantique.",
+      "pricePerDay": 45,
+      "lat": 4.0483,
+      "lng": 9.7043,
+      "pointsOfInterest": [
+        {
+          "name": "La Nouvelle Liberté",
+          "type": "monument",
+          "description": "Immense sculpture de 12 mètres réalisée par Joseph-Francis Sumégné en 1996, entièrement faite de matériaux de récupération recyclés (pièces de voitures, métaux). Incarne la résilience et l'esprit débrouillard de la capitale économique.",
+          "imageUrl": "/images/douala-nouvelle-liberte-1.jpg",
+          "images": [
+            "/images/douala-nouvelle-liberte-1.jpg"
+          ],
+          "lat": 4.0628,
+          "lng": 9.7118
+        },
+        {
+          "name": "Palais des Rois Bell (La Pagode)",
+          "type": "museum",
+          "description": "Édifié en 1905 par les Allemands pour le roi Auguste Manga Ndumbe, ce chef-d'œuvre d'influence asiatique fut surnommé « La Pagode » par l'écrivain Louis-Ferdinand Céline. Haut lieu de l'histoire de la dynastie Sawa.",
+          "imageUrl": "/images/douala-palais-bell-1.jpg",
+          "images": [
+            "/images/douala-palais-bell-1.jpg",
+            "/images/douala-palais-bell-2.jpg"
+          ],
+          "lat": 4.0435,
+          "lng": 9.6896
+        },
+        {
+          "name": "Musée Maritime National",
+          "type": "museum",
+          "description": "Logé dans un bâtiment moderne en forme de navire, retrace l'histoire des peuples du littoral, le commerce, la traite négrière, la colonisation et l'évolution portuaire du Cameroun. Entrée ~2 500 FCFA.",
+          "imageUrl": "/images/douala-musee-maritime-1.webp",
+          "images": [
+            "/images/douala-musee-maritime-1.webp",
+            "/images/douala-musee-maritime-2.webp",
+            "/images/douala-musee-maritime-3.webp",
+            "/images/douala2/musee-maritime-douala.webp",
+            "/images/douala2/musee-maritime-4.webp"
+          ],
+          "lat": 4.0425,
+          "lng": 9.6881
+        },
+        {
+          "name": "Cathédrale Saint-Pierre et Saint-Paul",
+          "type": "religious_site",
+          "description": "Construite par les pères spiritains français et consacrée en 1936, imposante cathédrale à l'architecture sobre et néo-romane, avec deux grandes tours jumelles.",
+          "imageUrl": "/images/douala-cathedrale-1.webp",
+          "images": [
+            "/images/douala-cathedrale-1.webp",
+            "/images/douala-cathedrale-2.webp",
+            "/images/douala2/cathedrale-saint.webp",
+            "/images/douala2/catthedrale-saint.webp"
+          ],
+          "lat": 4.0442,
+          "lng": 9.6925
+        },
+        {
+          "name": "Le Pont du Wouri",
+          "type": "landmark",
+          "description": "Infrastructure majeure reliant le centre-ville (Akwa/Bonanjo) à Bonabéri et à l'ouest du pays. Vue imprenable sur le fleuve Wouri, particulièrement magnifique au coucher du soleil.",
+          "imageUrl": "/images/douala-pont-wouri-1.jpg",
+          "images": [
+            "/images/douala-pont-wouri-1.jpg",
+            "/images/douala-pont-wouri-2.png"
+          ],
+          "lat": 4.0672,
+          "lng": 9.7001
+        },
+        {
+          "name": "Espace Doual'art",
+          "type": "art_gallery",
+          "description": "Centre d'art contemporain et laboratoire urbain fondé en 1991 par Marilyn Douala Bell et Didier Schaub, à l'origine de nombreux projets d'œuvres d'art public dans la ville.",
+          "imageUrl": "/images/douala-doualart-1.webp",
+          "images": [
+            "/images/douala-doualart-1.webp",
+            "/images/douala-doualart-2.webp",
+            "/images/douala2/douala-art-2.webp"
+          ],
+          "lat": 4.0433,
+          "lng": 9.6868
+        },
+        {
+          "name": "Le Temple du Centenaire",
+          "type": "religious_site",
+          "description": "Construit au XIXe siècle, commémore le centième anniversaire de l'installation de la première église chrétienne (baptiste) par Joseph Merrick et Alfred Saker. Façade blanche éclatante au toit vert.",
+          "imageUrl": "/images/douala-temple-centenaire-1.webp",
+          "images": [
+            "/images/douala-temple-centenaire-1.webp",
+            "/images/douala-temple-centenaire-2.webp"
+          ],
+          "lat": 4.0483,
+          "lng": 9.6961
+        },
+        {
+          "name": "La Galerie MAM",
+          "type": "art_gallery",
+          "description": "Espace d'exposition haut de gamme de 300 m² dédié à l'art contemporain africain : peintures, sculptures et photographies, aux standards européens.",
+          "imageUrl": "/images/douala-galerie-mam-1.webp",
+          "images": [
+            "/images/douala-galerie-mam-1.webp",
+            "/images/douala-galerie-mam-2.webp",
+            "/images/douala2/galerie-mam.webp",
+            "/images/douala2/galerie-mam4.webp"
+          ],
+          "lat": 4.0292,
+          "lng": 9.7042
+        },
+        {
+          "name": "Le Marché Central",
+          "type": "market",
+          "description": "Gigantesque marché urbain à ciel ouvert et sous halles, cœur battant du commerce de textile, de pagnes, d'alimentation et d'objets du quotidien. Expérience immersive, vibrante et colorée.",
+          "imageUrl": "/images/douala-marche-central-1.jpg",
+          "images": [
+            "/images/douala-marche-central-1.jpg",
+            "/images/douala-marche-central-2.jpg"
+          ],
+          "lat": 4.0392,
+          "lng": 9.7094
+        },
+        {
+          "name": "Le Marché des Fleurs",
+          "type": "market",
+          "description": "Marché artisanal spécialisé dans les sculptures sur bois, masques en bronze, bijoux traditionnels et plantes d'ornement. Plus calme que le Marché Central, prisé pour les souvenirs.",
+          "imageUrl": "/images/douala-marche-fleurs-1.jpg",
+          "images": [
+            "/images/douala-marche-fleurs-1.jpg",
+            "/images/douala-marche-fleurs-2.jpg"
+          ],
+          "lat": 4.0321,
+          "lng": 9.6958
+        },
+        {
+          "name": "Quartier Bonanjo",
+          "type": "neighborhood",
+          "description": "Ancien pôle de commandement colonial allemand puis français (ex-plateau Joss). Aujourd'hui quartier administratif, bancaire et institutionnel, ombragé et calme, aux bâtiments coloniaux préservés.",
+          "imageUrl": "/images/douala-bonanjo-1.jpg",
+          "images": [
+            "/images/douala-bonanjo-1.jpg",
+            "/images/douala2/quartier-bonanjo-2.avif"
+          ],
+          "lat": 4.0428,
+          "lng": 9.6865
+        },
+        {
+          "name": "Quartier Bonapriso",
+          "type": "neighborhood",
+          "description": "Quartier résidentiel huppé, arboré et cosmopolite, regroupant la majorité des restaurants gastronomiques, concept-stores et résidences d'expatriés. Sorties nocturnes sécurisées très plébiscitées.",
+          "imageUrl": "/images/douala-bonapriso-1.jpg",
+          "images": [
+            "/images/douala-bonapriso-1.jpg",
+            "/images/douala2/bonapriso.jpg"
+          ],
+          "lat": 4.0264,
+          "lng": 9.7028
+        },
+        {
+          "name": "Les Chutes d'Ekom-Nkam",
+          "type": "natural_site",
+          "description": "Spectaculaires chutes d'eau jumelles de 80 mètres de haut en pleine jungle, décor du film Greystoke, la légende de Tarzan. À environ 2h30 de Douala, près de Nkongsamba — excursion nature incontournable.",
+          "imageUrl": "/images/douala-chutes-ekom-1.webp",
+          "images": [
+            "/images/douala-chutes-ekom-1.webp",
+            "/images/douala-chutes-ekom-2.webp"
+          ],
+          "lat": 4.8089,
+          "lng": 9.9825
+        },
+        {
+          "name": "Le Littoral de Yassa (Stade de Japoma)",
+          "type": "landmark",
+          "description": "Zone d'extension urbaine et industrielle à la sortie Est de la ville, abritant le Stade Omnisports de Japoma. Quartier dynamique lors des grands événements sportifs régionaux.",
+          "imageUrl": "/images/douala-stade-japoma-1.jpg",
+          "images": [
+            "/images/douala-stade-japoma-1.jpg"
+          ],
+          "lat": 4.0205,
+          "lng": 9.8164
+        },
+        {
+          "name": "La Place du Gouvernement",
+          "type": "landmark",
+          "description": "Place historique majeure à Bonanjo entourée de bâtiments administratifs, où se trouve le monument de la Pagode. Excellent point de départ pour une visite historique à pied, propre et calme.",
+          "imageUrl": "/images/douala-place-gouvernement-1.webp",
+          "images": [
+            "/images/douala-place-gouvernement-1.webp",
+            "/images/douala2/place-gouvernement.jpg"
+          ],
+          "lat": 4.0431,
+          "lng": 9.6875
+        },
+        {
+          "name": "Palais de la Culture Sawa (Mukanda mwa Ngondo)",
+          "type": "museum",
+          "description": "Majestueux complexe de 1 760 m² construit en forme de pirogue, symbole unificateur rappelant la pêche et le culte des oracles de l'eau chez les Sawa. Inauguré fin 2023, il abrite un musée d'objets sacrés, des salles de spectacle et la Maison du tourisme de Douala.",
+          "imageUrl": "/images/douala-palais-sawa-1.jpg",
+          "images": [
+            "/images/douala-palais-sawa-1.jpg",
+            "/images/douala-palais-sawa-2.jpg",
+            "/images/douala2/palais-sawa.jpg"
+          ],
+          "lat": 4.0441,
+          "lng": 9.6898
+        },
+        {
+          "name": "Palais Dika Akwa Nya Bonambella",
+          "type": "museum",
+          "description": "Situé dans le fief de la chefferie Akwa, édifié par le prince et anthropologue Dika Akwa. Œuvre patrimoniale conservant la mémoire de la résistance et des traditions de la dynastie Akwa.",
+          "imageUrl": "/images/douala-palais-dika-akwa-1.webp",
+          "images": [
+            "/images/douala-palais-dika-akwa-1.webp",
+            "/images/douala-palais-dika-akwa-2.jpg"
+          ],
+          "lat": 4.0488,
+          "lng": 9.6975
+        },
+        {
+          "name": "Rond-point Deido (statue)",
+          "type": "monument",
+          "description": "Rond-point emblématique du quartier Deido, orné d'une statue devenue un repère bien connu des Doualais et un symbole visuel du quartier.",
+          "imageUrl": "/images/douala-nouvelle-liberte-1.jpg",
+          "images": [
+            "/images/douala-nouvelle-liberte-1.jpg"
+          ],
+          "lat": 4.0672,
+          "lng": 9.7086
+        },
+        {
+          "name": "Plage de Youpwe (axe Wouri)",
+          "type": "nature",
+          "description": "Plage populaire au bord du fleuve Wouri, prisée pour les balades et les repas de poisson braisé en fin de journée, avec vue sur l'activité fluviale de Douala.",
+          "imageUrl": "/images/douala2/plage-youpwe-et-axe-wouri.jpg",
+          "images": [
+            "/images/douala2/plage-youpwe-et-axe-wouri.jpg",
+            "/images/douala2/plage.jpg"
+          ],
+          "lat": 4.0198,
+          "lng": 9.7215
+        },
+        {
+          "name": "Plage de Foumbé (axe Wouri)",
+          "type": "nature",
+          "description": "Autre étendue de bord de fleuve appréciée pour la détente et la restauration en plein air, dans le prolongement de l'axe du Wouri.",
+          "imageUrl": "/images/douala2/plage-fouwe-et-axe-wouri.jpg",
+          "images": [
+            "/images/douala2/plage-fouwe-et-axe-wouri.jpg",
+            "/images/douala2/plage4.jpg"
+          ],
+          "lat": 4.0176,
+          "lng": 9.7248
+        }
+      ]
+    }
+  ]
+}

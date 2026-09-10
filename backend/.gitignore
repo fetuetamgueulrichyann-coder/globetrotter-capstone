@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.env
+venv/
+env/
+*.log
+*/data/*.tmp
+social-service/uploads/*
+!social-service/uploads/.gitkeep
+user-service/uploads/*
+!user-service/uploads/.gitkeep
+messaging-service/uploads/*
+!messaging-service/uploads/.gitkeep

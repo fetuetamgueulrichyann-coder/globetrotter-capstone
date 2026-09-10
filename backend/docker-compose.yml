@@ -1,0 +1,187 @@
+version: "3.9"
+
+# Tous les noms de conteneurs sont préfixés "mboatrip-yann-" pour ne jamais
+# entrer en collision avec les projets d'autres étudiants sur le même VPS
+# (Docker exige des noms de conteneurs uniques sur toute la machine, pas
+# seulement au sein d'un projet). COMPOSE_PROJECT_NAME (dans backend/.env)
+# préfixe en plus le réseau et les volumes.
+
+services:
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: mboatrip-yann-postgres
+    environment:
+      POSTGRES_USER: mboatrip
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change_this_password}
+      POSTGRES_DB: mboatrip
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    # Pas de port exposé publiquement : uniquement joignable par les
+    # services du réseau Docker interne (http://postgres:5432).
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mboatrip"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: mboatrip-yann-rabbitmq
+    # Pas de "ports:" exposés à l'hôte : RabbitMQ n'a besoin d'être joignable
+    # que par les autres conteneurs du même réseau Docker interne (user-service,
+    # itinerary-service, recommendation-service). L'exposer publiquement sur un
+    # VPS partagé avec les identifiants par défaut (guest/guest) serait risqué.
+    healthcheck:
+      test: ["CMD", "rabbitmqctl", "status"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  user-service:
+    build: ./user-service
+    container_name: mboatrip-yann-user-service
+    # Pas de port exposé à l'hôte : seul le gateway a besoin de lui parler,
+    # via le réseau Docker interne (http://user-service:5001).
+    volumes:
+      - ./user-service/uploads:/app/uploads   # persistance des photos de profil uploadées
+    env_file:
+      - ./user-service/.env
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+  itinerary-service:
+    build: ./itinerary-service
+    container_name: mboatrip-yann-itinerary-service
+    env_file:
+      - ./itinerary-service/.env
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      user-service:
+        condition: service_started
+    restart: unless-stopped
+
+  recommendation-service:
+    build: ./recommendation-service
+    container_name: mboatrip-yann-recommendation-service
+    env_file:
+      - ./recommendation-service/.env
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      user-service:
+        condition: service_started
+      itinerary-service:
+        condition: service_started
+    restart: unless-stopped
+
+  social-service:
+    build: ./social-service
+    container_name: mboatrip-yann-social-service
+    volumes:
+      - ./social-service/uploads:/app/uploads   # persistance des photos uploadées (fichiers, pas en base)
+    env_file:
+      - ./social-service/.env
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      user-service:
+        condition: service_started
+    restart: unless-stopped
+
+  messaging-service:
+    build: ./messaging-service
+    container_name: mboatrip-yann-messaging-service
+    volumes:
+      - ./messaging-service/uploads:/app/uploads   # persistance des messages vocaux (fichiers, pas en base)
+    # Pas de port exposé à l'hôte : reste interne au réseau Docker, comme
+    # les autres services. C'est edge-proxy (seul point d'entrée public,
+    # port 8000) qui route /socket.io/ vers lui, WebSocket inclus.
+    env_file:
+      - ./messaging-service/.env
+    depends_on:
+      postgres:
+        condition: service_healthy
+      user-service:
+        condition: service_started
+    restart: unless-stopped
+
+  gateway:
+    build: ./gateway
+    container_name: mboatrip-yann-gateway
+    # Plus de port exposé à l'hôte : edge-proxy (ci-dessous) est désormais
+    # le seul point d'entrée public du backend, sur le port 8000 comme avant.
+    env_file:
+      - ./gateway/.env
+    depends_on:
+      - user-service
+      - itinerary-service
+      - recommendation-service
+      - social-service
+      - messaging-service
+    restart: unless-stopped
+
+  edge-proxy:
+    build: ./edge-proxy
+    container_name: mboatrip-yann-edge-proxy
+    ports:
+      - "8000:8000"   # seul point d'entrée public du backend (inchangé pour ton HTTPS externe)
+    depends_on:
+      - gateway
+      - messaging-service
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ../frontend
+    container_name: mboatrip-yann-frontend
+    ports:
+      - "8081:80"     # accès : http://169.58.83.56:8081
+    depends_on:
+      - gateway
+    restart: unless-stopped
+
+  # Serveur TURN pour les appels audio/vidéo (WebRTC) — relaie le son/l'image
+  # uniquement quand deux téléphones n'arrivent pas à se connecter en direct
+  # entre eux (réseaux mobiles avec CGNAT, notamment). Config par ligne de
+  # commande directement, pas de fichier de conf séparé : plus simple à
+  # auditer d'un coup d'œil. Voir backend/.env pour TURN_PASSWORD /
+  # TURN_EXTERNAL_IP (jamais commités, comme POSTGRES_PASSWORD).
+  #
+  # ATTENTION : c'est le seul service du projet en network_mode "host" (les
+  # ports UDP dynamiques de relais média rendent la publication de ports
+  # Docker classique impraticable pour un TURN — c'est l'approche standard
+  # recommandée par coturn lui-même). Ça veut dire qu'il n'est PAS isolé
+  # comme les autres conteneurs : vérifie que rien d'autre sur ce VPS
+  # partagé n'utilise déjà les ports 3478 (TCP+UDP) ou 49160-49200 (UDP)
+  # avant de démarrer ce service.
+  turn:
+    image: coturn/coturn:4.6-alpine
+    container_name: mboatrip-yann-turn
+    network_mode: "host"
+    command: >
+      -n
+      --listening-port=3478
+      --min-port=49160
+      --max-port=49200
+      --fingerprint
+      --lt-cred-mech
+      --user=${TURN_USERNAME:-mboatrip}:${TURN_PASSWORD:?Définis TURN_PASSWORD dans backend/.env avant de démarrer ce service}
+      --realm=mboatrip.local
+      --external-ip=${TURN_EXTERNAL_IP:?Définis TURN_EXTERNAL_IP (l'IP publique du VPS) dans backend/.env}
+      --no-cli
+      --log-file=stdout
+    restart: unless-stopped
+
+volumes:
+  postgres-data:

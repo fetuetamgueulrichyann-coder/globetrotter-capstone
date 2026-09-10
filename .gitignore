@@ -1,0 +1,12 @@
+# Sauvegardes SQL créées par update.sh — jamais dans le dépôt (fichiers
+# lourds et propres à chaque déploiement, pas du code).
+/backups/
+
+# Cruft OS / éditeurs
+.DS_Store
+Thumbs.db
+*.swp
+# Environment files
+.env
+.env.*
+!.env.example
